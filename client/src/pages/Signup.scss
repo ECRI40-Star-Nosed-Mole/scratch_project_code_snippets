@@ -1,0 +1,96 @@
+.form--signup {
+  background-color: rgb(255, 0, 128);
+  position: relative;
+  padding: 15px;
+  border: 2px solid white;
+}
+
+.btn-exit {
+  color: white;
+  background-color: transparent;
+  outline: none;
+  border: 2px solid white;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 20px;
+  position: absolute;
+  left: 6%;
+}
+
+.btn-exit:hover {
+  background-color: white;
+  color: rgb(255, 0, 128);
+  border-color: rgb(255, 0, 128);
+}
+
+.btn-exit:active {
+  transform: scale(0.93);
+}
+
+.title-c--signup {
+  animation: none;
+}
+
+.typing-title--signup {
+  width: 100%;
+  animation: typing 0.1s, blinking 1s infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 99;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.form-title--signup {
+  margin-bottom: 20px;
+}
+
+.form-container--signup {
+  margin-bottom: 15px;
+}
+
+.input-label--signup {
+  color: white;
+}
+
+.input-field--signup {
+  border: 2px solid rgb(253, 171, 212);
+}
+
+.input-field:focus {
+  border: 2px solid transparent;
+  outline: 2px solid rgb(255, 0, 128);
+  background-color: rgb(253, 171, 212);
+}
+
+.form-btn--signup {
+  border: 2px solid white;
+  color: white;
+}
+
+.form-btn--signup:hover {
+  background-color: white;
+  color: rgb(255, 0, 128);
+}
+
+@media screen and (max-width: 550px) {
+  .form-title--signup {
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .form-title--signup {
+    margin-bottom: 0px;
+  }
+
+  .input-container--signup {
+    display: flex;
+    flex-direction: column;
+    margin: 6px;
+  }
+}

@@ -7,17 +7,20 @@ const cors = require('cors');
 const port = process.env.PORT || 3000;
 
 const mongoURI =
-  'mongodb+srv://paaoul:Melikeit1@scratchcluster.igf2bag.mongodb.net/';
+  'mongodb+srv://njhuemmer:4cukkHd0TFTpUIPf@cluster0.a9u3lfj.mongodb.net/?retryWrites=true&w=majority';
 
 mongoose.connect(mongoURI);
 
 const snippetsRouter = require('./routes/snippets');
+const accessRouter = require('./routes/access');
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/snippets', snippetsRouter);
+app.post('/login', accessRouter);
+app.post('/signup', accessRouter);
 
 app.use((req, res) => res.status(404).send('Invalid endpoint'));
 

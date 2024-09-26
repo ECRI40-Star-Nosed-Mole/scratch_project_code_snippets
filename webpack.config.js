@@ -4,11 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: process.env.NODE_ENV,
   entry: {
-    src: './client/index.js'
+    src: './client/index.js',
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
   },
   module: {
     rules: [
@@ -31,17 +31,15 @@ module.exports = {
       },
       {
         test: /\.s?css/,
-        use: [
-          'style-loader', 'css-loader', 'sass-loader'
-        ]
-      }
-    ]
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Development',
-      template:'./public/index.html'
-    })
+      template: './public/index.html',
+    }),
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],
@@ -49,11 +47,11 @@ module.exports = {
   devServer: {
     static: {
       publicPath: '/dist/',
-      directory: path.resolve(__dirname, 'dist')
+      directory: path.resolve(__dirname, 'dist'),
     },
     proxy: {
-      '/snippets': 'http://localhost:3000'
-    }
+      '/': 'http://localhost:3000',
+    },
   },
-  devtool: 'eval-source-map'
+  devtool: 'eval-source-map',
 };
